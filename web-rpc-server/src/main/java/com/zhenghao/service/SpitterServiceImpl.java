@@ -2,9 +2,12 @@ package com.zhenghao.service;
 
 import com.zhenghao.domain.Spitter;
 import com.zhenghao.domain.Spittle;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class SpitterServiceImpl implements SpitterService {
+// 注意：用rmi接口不需要序列号，用hessian接口需要序列化
+public class SpitterServiceImpl implements SpitterService,Serializable {
 
     @Override
     public List<Spittle> getRecentSpittles(int count) {

@@ -7,18 +7,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
 
 
-@Configuration
+//@Configuration
 public class RmiServiceServerConfig {
 
+    // 注册服务bean
     @Bean
     public SpitterService spitterService() {
         return new SpitterServiceImpl();
     }
 
-    //将service bean转变为RMI服务
+    // 将服务bean 导出为 RMI服务
     @Bean
     public RmiServiceExporter rmiServiceExporter(SpitterService spitterService) {
-        //启用Java安全管理器，可以加参数启动-Djava.security.manager
+        // 启用Java安全管理器
+        // 可以加参数启动:
+        //      -Djava.security.manager
+        //      -Djava.security.policy="/Users/zhenghao/Documents/Workspace/IDEA/webrpc/web-rpc-server/src/main/java/rmi/config/java.policy"
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }

@@ -23,7 +23,7 @@ public class SpittrWebAppInitializer
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{ "/", "/homepage", "/spittle" };
+        return new String[]{ "/" };
     }
 
 

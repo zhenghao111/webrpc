@@ -13,15 +13,14 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc //启用Spring MVC
-@ComponentScan("rmi")
+@ComponentScan("com.zhenghao")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     // 查找JSP文件，处理视图JSP
     @Bean
     public ViewResolver viewResolver() {
         //视图解析器
-        InternalResourceViewResolver resolver =
-                new InternalResourceViewResolver();
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true);
