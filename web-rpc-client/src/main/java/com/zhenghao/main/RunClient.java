@@ -1,8 +1,8 @@
-package rmi.main;
+package com.zhenghao.main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import rmi.config.RmiServiceClientConfig;
-import rmi.service.SpitterService;
+import com.zhenghao.config.RmiServiceClientConfig;
+import com.zhenghao.service.SpitterService;
 
 public class RunClient {
 

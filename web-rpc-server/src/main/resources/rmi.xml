@@ -3,12 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="spitterService" class="rmi.service.SpitterServiceImpl" />
+    <bean id="spitterService" class="com.zhenghao.service.SpitterServiceImpl" />
 
     <bean id="rmiServiceExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">
         <property name="serviceName" value="SpitterService" />
         <property name="service" ref="spitterService"></property>
-        <property name="serviceInterface" value="rmi.service.SpitterService"></property>
+        <property name="serviceInterface" value="com.zhenghao.service.SpitterService"></property>
         <property name="registryPort" value="1099"></property>
     </bean>
 

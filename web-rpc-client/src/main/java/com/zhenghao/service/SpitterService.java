@@ -1,9 +1,9 @@
-package rmi.service;
+package com.zhenghao.service;
 
 
 
-import rmi.domain.Spitter;
-import rmi.domain.Spittle;
+import com.zhenghao.domain.Spitter;
+import com.zhenghao.domain.Spittle;
 
 import java.util.List;
 

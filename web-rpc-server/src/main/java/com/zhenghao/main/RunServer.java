@@ -1,7 +1,7 @@
-package rmi.main;
+package com.zhenghao.main;
 
+import com.zhenghao.config.RmiServiceServerConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import rmi.config.RmiServiceServerConfig;
 
 public class RunServer {
     public static void main(String[] args) {

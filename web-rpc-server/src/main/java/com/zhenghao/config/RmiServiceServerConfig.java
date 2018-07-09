@@ -1,10 +1,10 @@
-package rmi.config;
+package com.zhenghao.config;
 
+import com.zhenghao.service.SpitterService;
+import com.zhenghao.service.SpitterServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
-import rmi.service.SpitterService;
-import rmi.service.SpitterServiceImpl;
 
 
 @Configuration

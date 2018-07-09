@@ -1,4 +1,4 @@
-package rmi.config;
+package com.zhenghao.config;
 
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

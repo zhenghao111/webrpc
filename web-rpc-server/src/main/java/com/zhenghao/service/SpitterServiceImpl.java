@@ -1,8 +1,7 @@
-package rmi.service;
+package com.zhenghao.service;
 
-import org.springframework.stereotype.Service;
-import rmi.domain.Spitter;
-import rmi.domain.Spittle;
+import com.zhenghao.domain.Spitter;
+import com.zhenghao.domain.Spittle;
 import java.util.List;
 
 public class SpitterServiceImpl implements SpitterService {

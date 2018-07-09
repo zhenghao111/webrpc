@@ -1,9 +1,10 @@
-package rmi.domain;
+package com.zhenghao.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 
 import java.io.Serializable;
 import java.util.Date;
