@@ -10,10 +10,10 @@ public class RmiServiceClientConfig {
     // 为RMI服务生成RMI代理，负责客户端与服务端通信的处理
     @Bean
     public RmiProxyFactoryBean rmiProxyFactoryBean() {
-        RmiProxyFactoryBean rmiProxyFactoryBean = new RmiProxyFactoryBean();
-        rmiProxyFactoryBean.setServiceUrl("rmi://localhost/SpitterService");
-        rmiProxyFactoryBean.setServiceInterface(SpitterService.class);
-        return rmiProxyFactoryBean;
+        RmiProxyFactoryBean proxy = new RmiProxyFactoryBean();
+        proxy.setServiceUrl("rmi://localhost/SpitterService");
+        proxy.setServiceInterface(SpitterService.class);
+        return proxy;
     }
 
 }

@@ -4,37 +4,37 @@ import com.zhenghao.service.SpitterService;
 import com.zhenghao.service.SpitterServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.remoting.caucho.BurlapServiceExporter;
+import org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter;
 import org.springframework.web.servlet.HandlerMapping;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 
 import java.util.Properties;
 
-//@Configuration
-public class BurlapServiceServerConfig {
+@Configuration
+public class HttpInvokerServerConfig {
 
-    // 注册服务bean
     @Bean
     public SpitterService spitterService() {
         return new SpitterServiceImpl();
     }
 
-    // 将服务bean 导出为 Burlap服务
+    // 将服务bean 导出为 HTTP Invoker服务
+    // HttpInvokerServiceExporter是一个控制器
+    // URL请求 -> DispatcherServlet -> httpInvokerServiceExporter bean -> 访问服务实现类
     @Bean
-    public BurlapServiceExporter burlapServiceExporter(SpitterService spitterService) {
-        BurlapServiceExporter exporter = new BurlapServiceExporter();
+    public HttpInvokerServiceExporter httpInvokerServiceExporter(SpitterService spitterService) {
+        HttpInvokerServiceExporter exporter = new HttpInvokerServiceExporter();
         exporter.setService(spitterService);
         exporter.setServiceInterface(SpitterService.class);
         return exporter;
     }
 
-    // 配置URL映射，确保DispatcherServlet把请求转给服务bean
+    // httpInvokerServiceExporter是一个控制器，所以需要映射URL 到 服务器上
     @Bean
-    public HandlerMapping hessianMapping() {
+    public HandlerMapping httpInvokerMapping() {
         SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
         Properties mappings = new Properties();
-        // Application context设置为/server，Burlap服务地址http://localhost:8080/server/spitter.service
-        mappings.setProperty("/spitter.service", "burlapServiceExporter");
+        mappings.setProperty("/spitter.service", "httpInvokerServiceExporter");
         mapping.setMappings(mappings);
         return mapping;
     }

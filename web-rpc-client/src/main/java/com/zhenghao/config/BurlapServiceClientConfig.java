@@ -14,10 +14,10 @@ public class BurlapServiceClientConfig {
 
     @Bean
     public BurlapProxyFactoryBean burlapProxyFactoryBean() {
-        BurlapProxyFactoryBean burlapProxyFactoryBean = new BurlapProxyFactoryBean();
-        burlapProxyFactoryBean.setServiceUrl("http://localhost:8080/server/spitter.service");
-        burlapProxyFactoryBean.setServiceInterface(SpitterService.class);
-        return burlapProxyFactoryBean;
+        BurlapProxyFactoryBean proxy = new BurlapProxyFactoryBean();
+        proxy.setServiceUrl("http://localhost:8080/server/spitter.service");
+        proxy.setServiceInterface(SpitterService.class);
+        return proxy;
     }
 
 }

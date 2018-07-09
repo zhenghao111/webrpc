@@ -26,12 +26,12 @@ public class RmiServiceServerConfig {
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }
-        RmiServiceExporter rmiServiceExporter = new RmiServiceExporter();
-        rmiServiceExporter.setService(spitterService);
-        rmiServiceExporter.setServiceName("SpitterService");
-        rmiServiceExporter.setServiceInterface(SpitterService.class);
+        RmiServiceExporter exporter = new RmiServiceExporter();
+        exporter.setService(spitterService);
+        exporter.setServiceName("SpitterService");
+        exporter.setServiceInterface(SpitterService.class);
 //        rmiServiceExporter.setRegistryHost(""); //默认是绑定到本地的RMI注册表
 //        rmiServiceExporter.setRegistryPort(1099); //默认端口是1099
-        return rmiServiceExporter;
+        return exporter;
     }
 }

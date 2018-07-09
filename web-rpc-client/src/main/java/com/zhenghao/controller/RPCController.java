@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/spitter")
-public class HessianController {
+public class RPCController {
 
     @Autowired
     private SpitterService spitterService;

@@ -1,6 +1,8 @@
 package com.zhenghao.main;
 
 import com.zhenghao.config.HessianServiceClientConfig;
+import com.zhenghao.config.HttpInvokerClientConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.zhenghao.config.RmiServiceClientConfig;
 import com.zhenghao.service.SpitterService;
@@ -18,9 +20,15 @@ public class RunClient {
 
         // 测试Hessian客户端
         // 在服务端输出结果
+//        AnnotationConfigApplicationContext context =
+//                new AnnotationConfigApplicationContext(HessianServiceClientConfig.class);
+//        SpitterService client = context.getBean("hessianProxyFactoryBean", SpitterService.class);
+//        client.getAllSpitters();
+
+        // 测试HTTP Invoker客户端
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(HessianServiceClientConfig.class);
-        SpitterService client = context.getBean("hessianProxyFactoryBean", SpitterService.class);
+                new AnnotationConfigApplicationContext(HttpInvokerClientConfig.class);
+        SpitterService client = context.getBean("httpInvokerProxyFactoryBean", SpitterService.class);
         client.getAllSpitters();
     }
 }

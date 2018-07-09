@@ -10,7 +10,7 @@ import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 
 import java.util.Properties;
 
-@Configuration
+//@Configuration
 public class HessianServiceServerConfig {
 
     // 注册服务bean
@@ -24,10 +24,10 @@ public class HessianServiceServerConfig {
     // 将服务bean 导出为 Hessian服务
     @Bean(name = "hessianServiceExporter")
     public HessianServiceExporter hessianServiceExporter(SpitterService spitterService) {
-        HessianServiceExporter hessianServiceExporter = new HessianServiceExporter();
-        hessianServiceExporter.setService(spitterService);
-        hessianServiceExporter.setServiceInterface(SpitterService.class);
-        return hessianServiceExporter;
+        HessianServiceExporter exporter = new HessianServiceExporter();
+        exporter.setService(spitterService);
+        exporter.setServiceInterface(SpitterService.class);
+        return exporter;
     }
 
     // 配置URL映射，确保DispatcherServlet把请求转给服务bean

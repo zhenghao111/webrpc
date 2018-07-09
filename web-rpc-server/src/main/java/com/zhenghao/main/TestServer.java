@@ -3,6 +3,7 @@ package com.zhenghao.main;
 import com.caucho.burlap.client.BurlapProxyFactory;
 import com.caucho.hessian.client.HessianProxyFactory;
 import com.zhenghao.service.SpitterService;
+import org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean;
 import org.springframework.remoting.rmi.RmiProxyFactoryBean;
 
 import java.net.MalformedURLException;
