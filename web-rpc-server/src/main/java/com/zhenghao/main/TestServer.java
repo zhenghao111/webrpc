@@ -1,5 +1,6 @@
 package com.zhenghao.main;
 
+import com.caucho.burlap.client.BurlapProxyFactory;
 import com.caucho.hessian.client.HessianProxyFactory;
 import com.zhenghao.service.SpitterService;
 import org.springframework.remoting.rmi.RmiProxyFactoryBean;
@@ -18,11 +19,17 @@ public class TestServer {
 //        spitterService.getAllSpitters();
 
         // 测试Hessian服务端
-        HessianProxyFactory proxy = new HessianProxyFactory();
-        SpitterService spitterService = (SpitterService) proxy.create(SpitterService.class, "http://localhost:8080/server/spitter.service");
-        // 是在服务端输出
-        spitterService.getAllSpitters();
-        spitterService.deleteSpittle(0);
+//        HessianProxyFactory proxy = new HessianProxyFactory();
+//        SpitterService spitterService = (SpitterService) proxy.create(SpitterService.class, "http://localhost:8080/server/spitter.service");
+//        // 是在服务端输出
+//        spitterService.getAllSpitters();
+//        spitterService.deleteSpittle(0);
         // 浏览器里直接用http://localhost:8080/server/spitter.service访问，HTTP Status 405 – Method Not Allowed说明服务端正常
+
+        // 测试Burlap服务端
+//        BurlapProxyFactory proxy = new BurlapProxyFactory();
+//        SpitterService spitterService = (SpitterService) proxy.create(SpitterService.class, "http://localhost:8080/server/spitter.service");
+//        spitterService.getAllSpitters();
+
     }
 }
